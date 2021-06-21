@@ -7,6 +7,8 @@ defmodule WabanexWeb.Router do
 
   scope "/api", WabanexWeb do
     pipe_through :api
+
+    get "/", IMCController, :index
   end
 
   # Enables LiveDashboard only for development
