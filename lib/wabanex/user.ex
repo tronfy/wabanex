@@ -7,9 +7,9 @@ defmodule Wabanex.User do
   @fields [:email, :name, :password]
 
   schema "users" do
-    field :email, :string
-    field :name, :string
-    field :password, :string
+    field :email, :string, null: false
+    field :name, :string, null: false
+    field :password, :string, null: false
 
     timestamps()
   end
