@@ -2,6 +2,8 @@ defmodule Wabanex.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Wabanex.Training
+
   @primary_key {:id, :binary_id, autogenerate: true}
 
   @fields [:email, :name, :password]
@@ -10,6 +12,8 @@ defmodule Wabanex.User do
     field :email, :string, null: false
     field :name, :string, null: false
     field :password, :string, null: false
+
+    has_one :training, Training
 
     timestamps()
   end
