@@ -26,23 +26,3 @@ defmodule Wabanex.Exercise do
     |> validate_required(@fields)
   end
 end
-
-params = %{
-  user_id: "c6f0cdc0-c73a-4088-bb1a-b723f9645252",
-  start_date: "2021-06-22",
-  end_date: "2021-07-22",
-  exercises: [
-    %{
-      name: "Triceps banco",
-      protocol_description: "regular",
-      repetitions: "3x12",
-      youtube_video_url: "www.youtube.com"
-    },
-    %{
-      name: "Triceps banco",
-      protocol_description: "regular",
-      repetitions: "3x12",
-      youtube_video_url: "www.youtube.com"
-    }
-  ]
-}
