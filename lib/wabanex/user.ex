@@ -13,7 +13,7 @@ defmodule Wabanex.User do
     field :name, :string, null: false
     field :password, :string, null: false
 
-    has_one :training, Training
+    has_many :trainings, Training
 
     timestamps()
   end
