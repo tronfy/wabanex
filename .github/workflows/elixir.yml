@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  MIX_ENV: test
+
 jobs:
   build:
 
@@ -27,5 +30,9 @@ jobs:
         restore-keys: ${{ runner.os }}-mix-
     - name: Install dependencies
       run: mix deps.get
+    - name: Set up Postgres
+      run: |
+        mix ecto.setup
+        mix ecto.migrate
     - name: Run tests
       run: mix test
