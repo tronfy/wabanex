@@ -30,7 +30,12 @@ jobs:
         restore-keys: ${{ runner.os }}-mix-
     - name: Install dependencies
       run: mix deps.get
-    - name: Set up Postgres
+    - name: Setup PostgreSQL
+      uses: Harmon758/postgresql-action@v1.0.0
+      with:
+        postgresql user: postgres
+        postgresql password: postgres
+    - name: Set up database
       run: |
         mix ecto.setup
         mix ecto.migrate
